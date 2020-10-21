@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //배열 비구조화 할당
+        let [a, b] = [100, 200];
+
+        document.write(a);
+        document.write(b);
+        document.write("<br>");
+
+        [a, b] = [b, a];
+        document.write(a);
+        document.write(b);
+        document.write("<br>");
+
+        //배열 비구조화 할당(펼침연산자)
+        let num = [100,200,300];
+        let [c, ...d] = num;
+
+        document.write(c);
+        document.write(d);
+        document.write("<br>");
+
+        //객체 비구조화 할당
+        let study = {
+            title : "javascript",
+            price : 20000
+        }
+        let {title, price} = study;
+
+        document.write(title);
+        document.write(price);
+
+    </script>
+</body>
+</html>
