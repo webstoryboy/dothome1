@@ -23,8 +23,8 @@
             //$("#inner_1 p:first-child").css("backgroundColor","red");
             //$("#inner_1 .txt1").css("backgroundColor","red");
             //$("#inner_1 p:lt(1)").css("backgroundColor","red");
-            $("#inner_1").find(".txt1").css("backgroundColor","red");
-            $("#inner_1 p").filter(".txt2").css("backgroundColor","blue");
+            //$("#inner_1").find("span").css("backgroundColor","red");
+            $("#inner_1 p span").filter("span").css("backgroundColor","blue");
         });
     </script>
 </head>
@@ -35,7 +35,7 @@
         <section id="inner_1">
             <h2>find(), filter()</h2>
             <p class="txt1">내용1</p>
-            <p class="txt2">내용2</p>
+            <p class="txt2">내용<span class="red">2</span></p>
         </section>
         <section id="inner_2">
             <h2>filter(function)</h2>

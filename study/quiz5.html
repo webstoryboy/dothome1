@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단답형 퀴즈</title>
+    <style>
+        body {
+            font-size: 18px;
+            background: #9FDDD8;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .quiz-wrap {
+            max-width: 500px;
+            background: #E3E3E3;
+            margin: 30px auto;
+            font-family: 'GmarketSansMedium';
+            padding: 20px;
+        }
+
+        .info {
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 50px;
+        }
+
+        .info ul {
+            border: 3px solid #000;
+        }
+
+        .info li {
+            border-bottom: 3px solid #000;
+            padding: 8px;
+        }
+
+        .info li:last-child {
+            border-bottom: 0;
+        }
+
+        .quiz {
+            padding: 20px;
+            border: 3px solid #000;
+            margin-top: 60px;
+        }
+
+        .quiz h2 {
+            font-size: 30px;
+            margin-top: 56px;
+            margin-bottom: 20px;
+            background: #E3E3E3;
+            text-align: center;
+        }
+        .quiz h2:first-child {
+            margin-top: 0;
+        }
+
+        .quiz .question {
+            font-size: 26px;
+            line-height: 1.4;
+            padding-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .quiz .question::before {
+            content: '';
+            position: absolute; left: 0; top: 5px;
+            width: 20px; height: 20px; 
+            border-radius: 50%;
+            background: #000;
+            
+        }
+
+        .quiz .select {
+            list-style: none;
+        }
+
+        .quiz .select li {
+            font-size: 26px;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: -webkit-box;
+            display: flex;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0.375em;
+        }
+
+        label input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        label input:checked+span {
+            background-color: #d6d6e5;
+        }
+        
+        label input:checked+span:before {
+            box-shadow: inset 0 0 0 0.4375em #00005c;
+        }
+
+        label span {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 0.375em 0.75em 0.375em 0.375em;
+            border-radius: 99em;
+            transition: 0.25s ease;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        label span:hover {
+            background-color: #d6d6e5;
+        }
+
+        label span:before {
+            display: -webkit-box;
+            display: flex;
+            flex-shrink: 0;
+            content: "";
+            background-color: #fff;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            margin-right: 0.375em;
+            -webkit-transition: 0.25s ease;
+            transition: 0.25s ease;
+            box-shadow: inset 0 0 0 0.125em #00005c;
+        }
+
+        .confirm {
+            margin: 20px 10px;
+            text-align: center;
+        }
+
+        .confirm .confirm-btn {
+            background-color: #00005c;
+            border-radius: 50px;
+            padding: 20px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .confirm-deex {
+            display: none;
+        }
+        .confirm .confirm-desc {
+            padding: 20px;
+            padding: 20px;
+            border: 3px solid #00005c;
+        }
+        .confirm .confirm-ex {
+            text-align: left;
+            padding-top: 10px;
+            position: relative;
+            color: red;
+            padding-left: 10px;
+        }
+        .confirm .confirm-ex::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: red;
+            position: absolute; left: 0; top: 15px;
+        }
+        .confirm .confirm-correct {
+            text-align: left;
+            padding-bottom: 10px;
+            position: relative;
+            color: red;
+            padding-left: 10px;
+        }
+        .confirm .confirm-correct::before {
+            content: '';
+            width: 5px; height: 5px;
+            background: red;
+            position: absolute; left: 0; top: 5px;
+        }
+
+        .submit {
+            text-align: center;
+            background-color: #00005c;
+            border-radius: 50px;
+            padding: 20px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+        .results {
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px solid #00005c;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-wrap">
+        <div class="info">
+            <ul>
+                <li>시험 유형 : <span>주관식 퀴즈1</span></li>
+                <li>시험 과목 : <span>정보처리기사</span></li>
+                <li>시험 과목 : <span>응용 SW기초 기술 활용</span></li>
+            </ul>
+        </div>
+
+        <div class="quiz"></div> 
+        <div class="submit">확인하기</div>
+        <div class="results"></div>
+    </div>
+
+    <script>
+        //문제 객체(생성자 함수)
+        function Question(text, choice, answer) {
+            this.text = text;       // 질문 텍스트
+            this.choice = choice;   // 선택할 답들(배열)
+            this.answer = answer;   // 정답 정보
+        }
+        var questions = [
+            new Question('UNIX의 가장 핵심적인 부분이며, 프로세스, 기억장치, 파일, 입출력 관리 등 여러가지를 수행하는 것은?', ['커널(Kernel)', '쉘(Shell)', 'NUR(Not Used Recently)', '비선점(Non-preemptive) 스케줄링'], '커널(Kernel)'),
+            new Question('사용자의 명령어를 인식하여 프로그램을 호출하고 명령을 수행하는 명력어 해석기를 무엇이라고 하는가?', ['커널(Kernel)', '쉘(Shell)', 'NUR(Not Used Recently)', '비선점(Non-preemptive) 스케줄링'], '커널(Kernel)'),
+            new Question('최근에 사용하지 않은 페이지를 교체하는 기법으로 참조 비트와 변형 비트가 사용되는 페이지 교체 알고리즘은 무엇인가?', ['커널(Kernel)', '쉘(Shell)', 'NUR(Not Used Recently)', '비선점(Non-preemptive) 스케줄링'], '커널(Kernel)')
+        ];
+        //퀴즈 정보 객체
+        function Quiz(questions) {
+            this.score = 0;             // 점수
+            this.questions = questions; // 문제
+            this.questionNum = 0;       // 문제 번호
+        }
+
+        //퀴즈 객체 생성
+        var quiz = new Quiz(questions);
+        
+        function updateQuiz(){
+            const question = document.querySelector('.quiz');
+            let questionIndex = quiz.questionNum + 1;
+
+            question.innerHTML = `
+                <h2>&lt; 문제<span class='num'>${questionIndex}</span> &gt;</h2>
+                <p class="question">${quiz.questions[quiz.questionNum].text}</p>
+                <div class="answers">
+                    <label>
+                        <input type="radio" name="question" value="a">
+                        <span class="select">${quiz.questions[quiz.questionNum].choice[0]}</span>
+                    </label> 
+                    <label>
+                        <input type="radio" name="question" value="b">
+                        <span class="select">${quiz.questions[quiz.questionNum].choice[1]}</span>
+                    </label> 
+                    <label>
+                        <input type="radio" name="question" value="c">
+                        <span class="select">${quiz.questions[quiz.questionNum].choice[2]}</span>
+                    </label> 
+                    <label>
+                        <input type="radio" name="question" value="d">
+                        <span class="select">${quiz.questions[quiz.questionNum].choice[3]}</span>
+                    </label>
+                </div>`;
+        }
+        updateQuiz();
+
+        //정답 확인
+        function checkAnswer(i){
+            const questionsBtn = document.querySelector(".submit");
+            const questionsSelect = document.querySelectorAll(".select");
+            const selector = `input[name=question}]:checked`;
+            const questionsAnswer = quiz.questions[quiz.questionNum].answer;
+            const questionsSelectText = "";
+
+            for (var i = 0; i < questionsSelect.length; i++) {
+                //questionsSelectText = questionsSelect[i].innerText;
+            }
+
+            questionsSelect[i].addEventListener('click', function(){
+                let target = questionsSelect[i].innerText;
+                alert(target)
+            });
+        }
+
+
+        checkAnswer();
+        
+      
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

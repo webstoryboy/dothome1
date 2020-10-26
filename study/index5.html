@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //생성자 함수(es5)
+        function YouInfo(name, job){
+            this.name = name;
+            this.job = job;
+        }
+        //프로토타입 메서드
+        YouInfo.prototype.study = function(){
+            document.write("내 이름은 "+this.name+"이며, 직업은 "+this.job+"입니다.<br>");
+        }
+        //인스턴스 객체 생성
+        let char = new YouInfo("웹쓰","웹 퍼블리셔");
+
+        //메서드 실행
+        char.study();
+
+        //클래스(es6)
+        class YouInfo2 {
+            constructor(name, job){
+                this.name = name;
+                this.job = job;
+            }
+            study(){
+                document.write("내 이름은 "+this.name+"이며, 직업은 "+this.job+"입니다.<br>");
+            }
+        }
+        //자식 클래스 추가
+        class YouInfo3 extends YouInfo2 {
+            constructor(name, job, age){
+                super(name, job);
+                this.age = age;
+            }
+            study2(){
+                document.write("내 이름은 "+this.name+"이며, 직업은 "+this.job+"입니다.<br>");
+            }
+        }
+
+        //인스턴스 객체 생성
+        let char2 = new YouInfo2("웹쓰","웹 퍼블리셔");
+        let char3 = new YouInfo3("웹쓰","웹 퍼블리셔");
+
+        //메서드 실행
+        char2.study();
+        char3.study();
+        char3.study2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
