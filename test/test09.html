@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; position: 0;}
+        body {}
+        #wrap {}
+        #header {width: 100%; height: 100px; background: #9adefd;}
+        #banner {width: 100%; height: 300px; background: #3dccfd;}
+        #content1 {overflow: hidden;}
+        #content1 .cont1-artcle1 {float: left; width: 30%; height: 300px; background: #00b7fb;}
+        #content1 .cont1-artcle2 {float: left; width: 70%; height: 150px; background: #00a8fb;}
+        #content1 .cont1-artcle3 {float: left; width: 70%; height: 150px; background: #0099f9;}
+        #content2 {overflow: hidden;}
+        #content2 .cont2-artcle1 {float: left; width: 33.33333%; height: 300px; background: #008aeb;}
+        #content2 .cont2-artcle2 {float: left; width: 33.33333%; height: 300px; background: #0079d8;}
+        #content2 .cont2-artcle3 {float: left; width: 33.33333%; height: 300px; background: #0067c5;}
+        #content3 {overflow: hidden; padding: 5%; background: #00a7fa;}
+        #content3 .cont3-artcle1 {float: left; width: 23%; border-radius: 5px; height: 150px; margin: 1%; background: #0079d8;}
+        #content3 .cont3-artcle2 {float: left; width: 23%; border-radius: 5px; height: 150px; margin: 1%; background: #0079d8;}
+        #content3 .cont3-artcle3 {float: left; width: 23%; border-radius: 5px; height: 150px; margin: 1%; background: #0079d8;}
+        #content3 .cont3-artcle4 {float: left; width: 23%; border-radius: 5px; height: 150px; margin: 1%; background: #0079d8;}
+        #footer {height: 100px; background: #00b7fb;}
+
+        .container {width: 1200px; margin: 0 auto;}
+
+        @media (max-width:1210px){
+            .container {width: 100%;}
+            #content2 .cont2-artcle1 {width: 50%;}
+            #content2 .cont2-artcle2 {width: 50%;}
+            #content2 .cont2-artcle3 {display: none;}
+            #content3 .cont3-artcle1 {width: 31.33333%;}
+            #content3 .cont3-artcle2 {width: 31.33333%;}
+            #content3 .cont3-artcle3 {width: 31.33333%;}
+            #content3 .cont3-artcle4 {display: none;}
+        }
+        @media (max-width:900px){
+            #content2 .cont2-artcle1 {width: 100%; height: 200px;}
+            #content2 .cont2-artcle2 {width: 100%; height: 200px;}
+        }
+        @media (max-width:480px){
+            #content1 .cont1-artcle1 {width: 100%;}
+            #content1 .cont1-artcle2 {width: 100%;}
+            #content1 .cont1-artcle3 {width: 100%;}
+            #content3 .cont3-artcle1 {width: 100%;}
+            #content3 .cont3-artcle2 {width: 100%;}
+            #content3 .cont3-artcle3 {width: 100%;}
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header id="header"></header>
+            <aside id="banner"></aside>
+            <section id="content1">
+                <article class="cont1-artcle1"></article>
+                <article class="cont1-artcle2"></article>
+                <article class="cont1-artcle3"></article>
+            </section>
+            <section id="content2">
+                <article class="cont2-artcle1"></article>
+                <article class="cont2-artcle2"></article>
+                <article class="cont2-artcle3"></article>
+            </section>
+            <section id="content3">
+                <article class="cont3-artcle1"></article>
+                <article class="cont3-artcle2"></article>
+                <article class="cont3-artcle3"></article>
+                <article class="cont3-artcle4"></article>
+            </section>
+            <footer id="footer"></footer>
+        </div>
+    </div>
+</body>
+</html>
