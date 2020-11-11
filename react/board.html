@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹스토리보이 포트폴리오 사이트입니다.">
+    <meta name="keywords" content="웹표준, 웹접근성, 사이트만들기, 포트폴리오, 웹스토리보이">
+    <title>Webstoryboy Portfolio</title>
+    
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- webfonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+</head>
+<body class="gray">
+   
+    <div id="skip">
+        <a href="#main">콘텐츠 바로가기</a>
+    </div>
+    <!-- //skip -->
+    
+    <!-- header -->
+    <header id="header">
+        <div class="port"><a href="port.html">port</a></div>
+        <div class="logo"><a href="index.html">webstroyboy</a></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="signup.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="board.html">게시판</a></li>
+            </ul>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reference.html">Reference</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    
+    <main id="main">
+        <!-- boardCont -->
+        <section id="boardCont">
+            <div class="container">
+                <h1 class="contTitle" aria-label="CODING NOTICE">
+                    <span aria-hidden="true">Code</span>
+                    <span aria-hidden="true">NOTICE</span>
+                </h1>
+                <div class="listBoard">
+                    <!-- searchBoard -->
+                    <div class="tableBar">
+                        <form name="search" method="post" action="searchResult.php" class="form-bar">
+                            <filedset>
+                                <input class="form-search" type="search" placeholder="검색어를 입력하세요!" aria-label="Search" name="searchKeyword" required="">
+                                <select class="form-select" name="option" required="">
+                                    <option value="title" selected="">제목</option>
+                                    <option value="content">내용</option>
+                                    <option value="tandc">제목과 내용</option>
+                                    <option value="torc">제목 또는 내용</option>
+                                </select>
+                                <button type="submit" class="form-btn">검색</button>
+                                <a type="button" class="btn-write" href="writeBoard.php">글 쓰기</a>
+                            </filedset>
+                        </form>
+                    </div>                    
+                    <!-- //searchBoard -->
+                    
+                    <div class="tableList">
+                        <table class="table">
+                            <colgroup>
+								<col style="width: 10%;">
+								<col style="width: 65%;">
+								<col style="width: 10%;">
+								<col style="width: 15%;">
+							</colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">등록자</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td>
+                                    <td>포트폴리오 사이트는 어떻게 만드나요?</td>
+                                    <td>웹스토리보이</td>
+                                    <td>2020-10-20 15:07</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- pagination -->
+                    
+                    <div class="tablePig">
+                        <ul class="pagination">
+                            <li><a href="#"><span aria-hidden="true">«</span></a></li>
+                            <li><a href="#"><span aria-hidden="true">‹</span></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">8</a></li>
+                            <li><a href="#"><span aria-hidden="true">›</span></a></li>
+                            <li><a href="#"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </div>
+
+
+            </div>
+            
+        </section>
+        <!-- //boardCont -->
+    </main>
+    
+
+</body>
+</html>
