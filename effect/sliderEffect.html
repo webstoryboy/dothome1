@@ -7,7 +7,7 @@
     <meta name="author" content="webstoryboy">
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
     <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
-    <title>Webstoryboy | Slider</title>
+    <title>Webstoryboy | Slider Effect</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -80,14 +80,14 @@
 
     <div class="bs-header bgs5" id="content">
         <div class="container">
-            <h1>CSS Animation Reference v1.0 &lt;/doc&gt;</h1>
+            <h1>Slider Script Reference v1.0 &lt;/doc&gt;</h1>
             <p><a href="https://richclub8.dothome.co.kr" target="_blank">richclub8.dothome.co.kr</a></p>
         </div>
     </div>
 
     <div class="container bs-docs-container">
         <div class="row">
-            <div class="col-md-9" role="main">
+            <div class="col-md-12" role="main">
                 <!-- 배너 광고 -->
                 <div class="ad">
                     <script src="https://ads-partners.coupang.com/g.js"></script>
@@ -99,30 +99,96 @@
 
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro2" class="page-header">클리핑 마스크</h2>
-                    <p class="bs-callout bs-callout-info">클리핑 마스크는 레이어 마스크와 달리 상위 레이어의 이미지를 하위 레이어에 클리핑하여 레이어의 모양으로 잘라낸 것처럼 나타내는 기능입니다.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12">
-                            
-                        </div>
-                        <div class="col-xs-12 col-md-12">
-                           
-                        </div>
-                    </div>
+                    <h2 id="intro1" class="page-header">Slider Effect01</h2>
+                    <p class="bs-callout bs-callout-info">이미지 슬라이드 효과</p>
+                    <iframe width="100%" height="1000px" src="sliderEffect01-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slider = $(".slider");
+
+let currentIndex = 0;               //현재 첫 번째 보이는 이미지
+let sliderCount = slider.length;    //이미지 갯수
+
+//3초에 한번씩 함수를 실행 
+setInterval(function(){
+    let nextIndex = (currentIndex + 1) % sliderCount;
+
+    slider.eq(currentIndex).fadeOut();  //첫 번재 이미지를 사라지게
+    slider.eq(nextIndex).fadeIn(); //두 번째 이미지를 나타나게
+
+    console.log("currentIndex : " + currentIndex);
+    console.log("nextIndex : " + nextIndex);
+
+    //currentIndex++;
+    currentIndex = nextIndex;
+},3000);
+</code></pre>
+<h3>JavaScript</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = document.querySelector(".slider-wrap");
+const sliderImg = document.querySelector(".slider-img");
+const slider = document.querySelectorAll(".slider");
+
+let currentIndex = 0;               //현재 보이는 첫 번재 이미지
+let sliderCount = slider.length;    //이미지 갯수
+
+setInterval( () => {
+    let nextIndex = (currentIndex + 1) % sliderCount;
+
+    // slider[currentIndex].style.display = "none";
+    // slider[nextIndex].style.display = "block";
+
+    slider[currentIndex].style.opacity = "0";
+    slider[nextIndex].style.opacity = "1";
+
+    currentIndex = nextIndex;
+},3000);</code></pre>
                 </div>
                 <!-- //Intro1 -->
-            </div>
-            <!-- //col-md-9 -->
 
-            <!-- col-md-3 -->
-            <div class="col-md-3">
-                <div class="bs-sidebar hidden-print" role="complementary">
-                    <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">레이어 마스크</a></li>
-                    </ul>
+
+
+
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">Slider02</h2>
+                    <p class="bs-callout bs-callout-info">이미지 슬라이드 효과</p>
+                    <iframe width="100%" height="560px" src="parallax01-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>
+</code></pre>
+<h3>JavaScript</h3>
+<pre class="line-numbers language-js"><code>
+
+</code></pre>
                 </div>
+                <!-- //Intro2 -->
+
+
+                <!-- 배너 광고 -->
+                <div class="ad">
+                    <script src="https://ads-partners.coupang.com/g.js"></script>
+                    <script>
+                        new PartnersCoupang.G({ id:347699 });
+                    </script>
+                </div>
+                <!-- //배너 광고 -->
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">Quiz2</h2>
+                    <p class="bs-callout bs-callout-info">주관식 3문제 스타일(자바스크립트/제이쿼리)</p>
+               
+                
+                </div>
+                <!-- //Intro2 -->
+
+
             </div>
-            <!--//col-md-3 -->
+            <!-- //col-md-12 -->
+
+
         </div>
         <!-- //row -->
     </div>
