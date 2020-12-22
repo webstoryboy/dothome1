@@ -416,15 +416,30 @@
 
     <!-- script -->
     <script>
-        document.addEventListener("scroll", () => {
-            let pageYOffset = window.pageYOffset;
+        // document.addEventListener("scroll", () => {
+        //     let pageYOffset = window.pageYOffset;
             
-            document.querySelectorAll(".reveal").forEach(elem => {
-                if( pageYOffset > elem.offsetTop ){
+        //     document.querySelectorAll(".reveal").forEach(elem => {
+        //         if( pageYOffset > elem.offsetTop ){
+        //             elem.classList.add("show");
+        //         }
+        //     });
+        // })
+
+        function scrollReveal(){
+            const reveal = document.querySelectorAll(".reveal");
+            reveal.forEach(elem => {
+                let scrollTop = document.documentElement.scrollTop + window.innerHeight/2;
+                let offsetTop = elem.offsetTop + elem.parentElement.offsetTop;
+                console.log(offsetTop);
+
+                if(scrollTop > offsetTop){
                     elem.classList.add("show");
                 }
-            });
-        })
+            })
+        }
+
+        window.addEventListener("scroll", scrollReveal);
     </script> 
 </body>
 </html>
