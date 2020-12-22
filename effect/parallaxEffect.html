@@ -102,7 +102,14 @@
                     <h2 id="intro1" class="page-header">Parallax01</h2>
                     <p class="bs-callout bs-callout-info">패랠랙스 스크롤링 이팩트</p>
                     <iframe width="100%" height="660px" src="parallax01-jquery.html" frameborder="0"></iframe>
-<h3>jQuery</h3>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
 <pre class="line-numbers language-js"><code>$(window).scroll(function(){
     const scrollTop = $(window).scrollTop() + $(window).height()/2;
 
@@ -248,7 +255,8 @@ $(window).scroll(function(){
     });
 });
 </code></pre>
-<h3>JavaScript</h3>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
 <pre class="line-numbers language-js"><code>window.addEventListener("scroll", function(){
     let pageYOffset = window.pageYOffset;
 
@@ -310,7 +318,11 @@ $(window).scroll(function(){
     } else {
         document.querySelector(".s9OffsetTop").style.color = "white";
     }
-});</code></pre>
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- //Intro1 -->
 
@@ -323,7 +335,14 @@ $(window).scroll(function(){
                     <h2 id="intro1" class="page-header">Parallax02</h2>
                     <p class="bs-callout bs-callout-info">패랠랙스 이펙트</p>
                     <iframe width="100%" height="660px" src="parallax02-jquery.html" frameborder="0"></iframe>
-<h3>jQuery</h3>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home2" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile2" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home2">
 <pre class="line-numbers language-js"><code>$(window).scroll(function(){
     let scrollTop = $(window).scrollTop();
 
@@ -367,7 +386,8 @@ $(window).scroll(function(){
     $(".scrollTop").text(scrollTop);
 });
 </code></pre>
-<h3>JavaScript</h3>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile2">
 <pre class="line-numbers language-js"><code>window.addEventListener("scroll", () => {
     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
 
@@ -392,7 +412,7 @@ $(window).scroll(function(){
     // document.querySelector("#section9 .content-item-desc").style.transform = "translateY("+ -offset9 +"px)";
     
     //한번에(for문)
-    // for( let i=1; i<=9; i++ ){
+    // for( let i=1; i&lt;=9; i++ ){
     //     let offset = (pageYOffset - document.getElementById("section"+i).offsetTop) * 0.2;
     //     document.querySelector("#section"+i+" .content-item-desc").style.transform = "translateY("+ -offset +"px)";
     // }
@@ -407,9 +427,126 @@ $(window).scroll(function(){
 
     //출력용
     document.querySelector(".pageYOffset").innerText = parseInt(pageYOffset);
-});</code></pre>
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- //Intro2 -->
+
+
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Parallax03</h2>
+                    <p class="bs-callout bs-callout-info">패랠랙스 이펙트</p>
+                    <iframe width="100%" height="660px" src="parallax03-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home3" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile3" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home3">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile3">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Intro3 -->
+
+
+
+
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Parallax04</h2>
+                    <p class="bs-callout bs-callout-info">패랠랙스 이펙트</p>
+                    <iframe width="100%" height="660px" src="parallax04-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home4" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile4" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home4">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile4">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Intro4 -->
+
+
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Parallax05</h2>
+                    <p class="bs-callout bs-callout-info">패랠랙스 이펙트</p>
+                    <iframe width="100%" height="660px" src="parallax05-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home5" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile5" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home5">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile5">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Intro5 -->
+
+
+
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Parallax06</h2>
+                    <p class="bs-callout bs-callout-info">패랠랙스 이펙트</p>
+                    <iframe width="100%" height="660px" src="parallax06-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home6" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile6" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home6">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile6">
+<pre class="line-numbers language-js"><code>
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Intro6 -->
+
+
 
 
                 <!-- 배너 광고 1140 -->
@@ -420,9 +557,6 @@ $(window).scroll(function(){
                     </script>
                 </div>
                 <!-- //배너 광고 1140 -->
-
-          
-
             </div>
             <!-- //col-md-12 -->
 
