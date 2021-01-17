@@ -540,96 +540,430 @@
         //47 콜백 함수 
         //47 콜백 함수 : 함수를 실행시키고 난 뒤 또 함수를 실행시키고 싶을 때
         {
+            function func6(){
+                document.write("func6이 실행되었습니다.<br><br>");
+            }
+            function callback(text){
+                text();
+            }
+
+            document.write("*** 47 콜백 함수 *** <br>");
+            callback(func6);
+        }
+
+        //48 콜백함수
+        {
+            function func7(){
+                document.write("func7이 실행되었습니다.<br>");
+            }
             function callback(num){
                 for( let i=1; i<=10; i++ ){
                     num(i);
                 }
             }
-            const func6 = function(i){
-                document.write("func6이 실행되었습니다.<br>")
-            }
 
-            document.write("*** 47 콜백 함수 *** <br>");
-            callback(func6);
+            document.write("*** 48 콜백함수 *** <br>");
+            callback(func7);
             document.write("<br><br>");
         }
 
-        //48 콜백 함수(비동기/동기)
-        {   
-            //동기
-            // function a(){
-            //     console.log("a");
-            // }
-            // function b(){
-            //     console.log("b");
-            // }
-            // a();
-            // b();
-            
-            //비동기
-            // function a(){
-            //     setTimeout(function(){
-            //         console.log("a");
-            //     },1000);
-            // }
-            // function b(){
-            //     console.log("b");
-            // }
-            // a();
-            // b();
-            
-            //콜백함수
-            // function a(callback){
-            //     setTimeout(function(){
-            //         console.log("a");
-            //         callback();
-            //     },1000);
-            // }
-            // function b(){
-            //     console.log("b");
-            // }
-            // a(function(){
-            //     b();
-            // });
+        //48 콜백함수(비동기/동기)
+        // {
+        //     function funA(){
+        //         document.write("funA가 실행되었습니다.<br>");
+        //     }
+        //     function funB(){
+        //         document.write("funB가 실행되었습니다.<br>");
+        //     }
+        //     funA();
+        //     funB();
+        // }
+        // {
+        //     function funA(){
+        //         setTimeout(function(){
+        //             document.write("funA가 실행되었습니다.<br>");
+        //         },1000);
+        //     }
+        //     function funB(){
+        //         document.write("funB가 실행되었습니다.<br>");
+        //     }
+        //     funA();
+        //     funB();
+        // }
 
-            //콜백 지옥
-            function a(callback){
-                setTimeout(function(){
-                    console.log('a');
-                    callback();
-                },1000);
-            }
-            function b(callback){
-                setTimeout(function(){
-                    console.log('b');
-                    callback();
-                },1000);
-            }
-            function c(callback){
-                setTimeout(function(){
-                    console.log('c');
-                    callback();
-                },1000);
-            }
-            function d(callback){
-                setTimeout(function(){
-                    console.log('d');
-                },1000);
-            }
+        // {
+        //     function funA(callback){
+        //         setTimeout(function(){
+        //             document.write("funA가 실행되었습니다.<br>");
+        //             callback();
+        //         },1000);
+        //     }
+        //     function funB(){
+        //         document.write("funB가 실행되었습니다.<br>");
+        //     }
+        //     funA(function(){
+        //         funB();
+        //     });
+        // }
+        
+        //49. 즉시 실행 함수
+        {
+            // function func8(){
+            //     document.write("*** 49. 즉시 실행 함수 *** <br>");
+            //     document.write("func8이 실행되었습니다.");
+            // }
+            // func8();
 
-            a(function(){
-                b(function(){
-                    c(function(){
-                        d();
-                    })
-                });
-            });
+            (function(){
+                document.write("*** 49. 즉시 실행 함수 *** <br>");
+                document.write("func8이 실행되었습니다.<br><br>");
+            }());
         }
 
+        //50. 화살표 함수(선언적 함수)
+        {
+            // function func9(){
+            //     document.write("func9이 실행되었습니다.");
+            // }
+            // func9();
 
+            func9 = () => {
+                document.write("*** 50. 화살표 함수(선언적 함수) *** <br>");
+                document.write("func9이 실행되었습니다.<br><br>");
+            }
+            func9();
+        }
 
+        //51. 화살표 함수(익명 함수)
+        {
+            // const func10 = function(){
+            //     document.write("func10이 실행되었습니다.");
+            // }
 
+            const func10 = () => {
+                document.write("*** 51. 화살표 함수(익명 함수) *** <br>");
+                document.write("func10이 실행되었습니다.<br><br>");
+            }
+            func10();
+        }
 
+        //52. 화살표 함수(리턴값이 있는 함수)
+        {
+            // function func11(){
+            //     const str = "func10이 실행되었습니다.<br><br>";
+            //     return str;
+            // }
+            // document.write(func11());
+
+            const func11 = () => {
+                const str = "func10이 실행되었습니다.<br><br>";
+                return str;
+            }
+
+            document.write("*** 52. 화살표 함수(리턴값이 있는 함수) *** <br>");
+            document.write(func11());
+        }
+
+        //53. 화살표 함수(리턴값 + 매개변수)
+        {
+            const func12 = (str) => {
+                return str;
+            }
+
+            document.write("*** 53. 화살표 함수(리턴값 + 매개변수) *** <br>");
+            document.write(func12("func12이 실행되었습니다.<br><br>"));
+        }
+
+        //54. 화살표 함수(리턴값 + 매개변수 생략)
+        {
+            const func13 = str => {
+                return str;
+            }
+            document.write("*** 54. 화살표 함수(리턴값 + 매개변수 생략) *** <br>");
+            document.write(func13("func13이 실행되었습니다.<br><br>"));
+        }
+
+        //55. 화살표 함수(리턴값 생략 + 매개변수 생략)
+        {
+            const func14 = str => str;
+            
+            document.write("*** 55. 화살표 함수(리턴값 생략 + 매개변수 생략) *** <br>");
+            document.write(func14("func14이 실행되었습니다.<br><br>"));
+        }
+
+        //56. Default Parameters
+        {
+            // function func15(str){
+            //     if( str == null ){
+            //         str = "func15이 실행되었습니다.<br><br>";
+            //         document.write(str);
+            //     }
+            // }
+            function func15(str = "func15이 실행되었습니다.<br><br>"){
+                document.write(str);
+            }
+            document.write("*** 56. Default Parameters *** <br>");
+            func15();
+        }
+
+        //57. 조건부 연산자 함수(Ternary Operator)
+        {
+            var Ternary = '';
+            var Ternary = 0;
+            var Ternary = true;
+            var Ternary = false;
+            var Ternary = [];
+            var Ternary = {};
+            var Ternary = undefined;
+            var Ternary = null;
+            
+            function func16(){
+                // if(Ternary){
+                //     document.write("func16True이 실행되었습니다.<br><br>");
+                // } else {
+                //     document.write("func16False이 실행되었습니다.<br><br>");
+                // }
+                Ternary ? document.write("True<br><br>") : document.write("False<br><br>");
+            }
+            document.write("*** 57. 조건부 연산자 함수(Ternary Operator) *** <br>");
+            func16();
+        }
+
+        //58. 템플릿 리터럴(Template Literals)
+        {
+            function func17(name){
+                document.write("1. " + name + "이 실행되었습니다.<br>");
+                document.write(`2. ${name}이 실행되었습니다.<br><br>`);
+            }
+            document.write("*** 58. 템플릿 리터럴(Template Literals) *** <br>");
+            func17("func17");
+        }
+
+        //59. 템플릿 리터럴(Template Literals)
+        {
+            const func18 = [
+                { name : "1. func18", result: "실행되었습니다." },
+                { name : "2. func18", result: "실행되었습니다." }
+            ]
+            const result = 
+                `${func18[0].name}가 ${func18[0].result}<br>
+                 ${func18[1].name}가 ${func18[1].result}`;
+            
+            document.write("*** 59. 템플릿 리터럴(Template Literals) *** <br>");
+            document.write(result,"<br><br>");
+        }
+        //60. 템플릿 리터럴(Template Literals)
+        {
+            const func19 = (str) => {
+                document.write(`${str}`);
+            }
+            document.write("*** 60. 템플릿 리터럴(Template Literals) *** <br>");
+            func19("func19이 실행되었습니다.<br><br>");
+        }
+
+        //변수 : 데이터 하나/변수가 변함
+        //상수 : 데이터 하나/변수가 변하지 않음
+        //배열 : 데이터 저장/하나 이상
+        //객체 : 데이터 저장/키.값
+        //함수 : 데이터 실행 
+        //객체 + 함수 => 객체형 함수 
+        //클래스 : 함수의 집합체  => 클래스 함수 => 최종 => 프레임 웍(리액트, 뷰, 앵귤러)
+        //데이터 베이스 : MySQl, Firebase, aws, ajax, josn, API 
+
+        //61. 객체 + 함수(매개 변수로 출력하기)
+        {
+            function func20(num, name, job){
+                document.write(num + ". 내 이름은 " + name + "이며, 직업은 " + job + "입니다.<br>");
+            }
+
+            document.write("*** 61. 객체 + 함수 (매개 변수로 출력하기) *** <br>");
+            func20("1", "웹스", "웹 퍼블리셔");
+            func20("2", "웹스토리보이", "프론트앤드 개발자");
+            document.write("<br>");
+        }
+
+        //62. 객체 + 함수(변수로 출력하기)
+        {
+            function func21(num, name, job){
+                document.write(num + ". 내 이름은 " + name + "이며, 직업은 " + job + "입니다.<br>");
+            }
+
+            const youNum1 = "1";
+            const youName1 = "웹스";
+            const youJob1 = "웹 퍼블리셔";
+            const youNum2 = "2";
+            const youName2 = "웹스토리보이";
+            const youJob2 = "프론트앤드 개발자";
+
+            document.write("*** 62. 객체 + 함수(변수로 출력하기) *** <br>");
+            func21(youNum1, youName1, youJob1);
+            func21(youNum2, youName2, youJob2);
+            document.write("<br>");
+        }
+        //63. 객체 + 함수(객체로 출력하기)
+        {
+            function func22(num, name, job){
+                document.write(num + ". 내 이름은 " + name + "이며, 직업은 " + job + "입니다.<br>");
+            }
+            let info = [
+                {
+                    num: 1,
+                    name: "웹스",
+                    job: "웹 퍼블리셔"
+                },
+                {
+                    num: 2,
+                    name: "웹스토리보이",
+                    job: "프론트앤드 개발자"
+                }
+            ];
+            document.write("*** 63. 객체 + 함수(객체로 출력하기) *** <br>");
+            func22(info[0].num, info[0].name, info[0].job);
+            func22(info[1].num, info[1].name, info[1].job);
+            document.write("<br>");
+        }
+
+        //64. 객체 + 함수(변수)
+        {
+            const info = {
+                num1: 1,
+                name1: "웹스",
+                job1: "웹 퍼블리셔",
+                num2: 2,
+                name2: "웹스토리보이",
+                job2: "프로트앤드 개발자",
+
+                result1: function(){
+                    document.write(this.num1 + ". 내 이름은 " + this.name1 + "이며, 직업은 " + this.job1 + "입니다.<br>");
+                },
+                result2: function(){
+                    document.write(this.num2 + ". 내 이름은 " + this.name2 + "이며, 직업은 " + this.job2 + "입니다.<br>");
+                }
+            }
+            document.write("*** 64. 객체 + 함수(변수) *** <br>");
+            info.result1();
+            info.result2();
+            document.write("<br>");
+        }
+
+        //65. 객체 생성자 함수
+        {
+            function func23(num, name, job){
+                this.num = num;
+                this.name = name;
+                this.job = job;
+                this.result = function(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+                }
+            }
+
+            let info1 = new func23("1","웹스","웹스토리보이");
+            let info2 = new func23("2","웹스토리보이","프론트앤드 개발자");
+
+            document.write("*** 65. 객체 생성자 함수 *** <br>");
+            info1.result();
+            info2.result();
+            document.write("<br>");
+        }
+
+        //66. 프로토타입 메서드
+        {
+            function func24(num, name, job){
+                this.num = num;
+                this.name = name;
+                this.job = job;
+            }
+            func24.prototype.result = function(){
+                document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+            }
+
+            let info1 = new func24("1","웹스","웹스토리보이");
+            let info2 = new func24("2","웹스토리보이","프론트앤드 개발자");
+
+            document.write("*** 66. 프로토타입 메서드 *** <br>");
+            info1.result();
+            info2.result();
+            document.write("<br>");
+        }
+
+        //67. 객체 리터럴 함수
+        {
+            function func25(num, name, job){
+                this.num = num;
+                this.name = name;
+                this.job = job;
+            }
+
+            func25.prototype = {
+                result1 : function(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+                },
+                result2 : function(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+                }
+            }
+
+            let info1 = new func25("1","웹스","웹스토리보이");
+            let info2 = new func25("2","웹스토리보이","프론트앤드 개발자");
+
+            document.write("*** 67. 객체 리터럴 함수 *** <br>");
+            info1.result1();
+            info2.result2();
+            document.write("<br>");
+        }
+
+        //68. 클래스
+        {
+            class study {
+                constructor(num, name, job){
+                    this.num = num;
+                    this.name = name;
+                    this.job = job;
+                }
+                result(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+                }
+            }
+            let info1 = new study("1","웹스","웹스토리보이");
+            let info2 = new study("2","웹스토리보이","프론트앤드 개발자");
+
+            document.write("*** 68. 클래스 *** <br>");
+            info1.result();
+            info2.result();
+            document.write("<br>");
+        }
+
+        //69. 클래스 상속
+        {
+            class study {
+                constructor(num, name, job){
+                    this.num = num;
+                    this.name = name;
+                    this.job = job;
+                }
+                result(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.<br>");
+                }
+            }
+            class study2 extends study {
+                constructor(num, name, job, age){
+                    super(num, name, job);
+                    this.age = age;
+                }
+                result2(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는 "+ this.age+ "입니다.<br>");
+                }
+            }
+            let info1 = new study("1","웹스","웹스토리보이");
+            let info2 = new study2("2","웹스토리보이","프론트앤드 개발자","40");
+
+            document.write("*** 69. 클래스 상속 *** <br>");
+            info1.result();
+            info2.result();
+            info2.result2();
+        }
+
+            
     </script>
 </body>
 </html>
